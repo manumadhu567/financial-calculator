@@ -1,0 +1,62 @@
+<div class="calculator-container">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('basic')">Basic Calculator</button>
+    <button class="tab" onclick="showTab('loan')">Loan Calculator</button>
+    <button class="tab" onclick="showTab('interest')">Interest Calculator</button>
+  </div>
+
+  <!-- Basic Calculator -->
+  <div id="basic" class="tab-content active">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="backspace()">CE</button>
+      <button onclick="append('/')">/</button>
+      <button onclick="append('*')">×</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('-')">-</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('+')">+</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="equal" onclick="calculate()">=</button>
+
+      <button onclick="append('0')" class="zero">0</button>
+      <button onclick="append('.')">.</button>
+    </div>
+  </div>
+
+  <!-- Loan Calculator -->
+  <div id="loan" class="tab-content">
+    <label>Loan Amount (₹)</label>
+    <input type="number" id="loanAmount" placeholder="Enter loan amount" />
+    <label>Annual Interest Rate (%)</label>
+    <input type="number" id="loanRate" placeholder="Enter interest rate" />
+    <label>Loan Term (Years)</label>
+    <input type="number" id="loanTerm" placeholder="Enter loan term" />
+    <button class="calc-btn" onclick="calculateLoan()">Calculate Monthly Payment</button>
+    <div id="loanResult"></div>
+  </div>
+
+  <!-- Interest Calculator -->
+  <div id="interest" class="tab-content">
+    <label>Principal Amount (₹)</label>
+    <input type="number" id="principal" placeholder="Enter principal amount" />
+    <label>Rate of Interest (%)</label>
+    <input type="number" id="rate" placeholder="Enter interest rate" />
+    <label>Time (Years)</label>
+    <input type="number" id="time" placeholder="Enter time in years" />
+    <button class="calc-btn" onclick="calculateInterest()">Calculate Interest</button>
+    <div id="interestResult"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
